@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicidad - Salón de Belleza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        .banner {
+            background-color: #C8A2D6;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .publicidad {
+            margin: 20px auto;
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .anuncio {
+            width: 300px;
+            margin: 15px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            background-color: white;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        .anuncio img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .boton {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF69B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .boton:hover {
+            background-color: #D14791;
+        }
+        #modal, #modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #modal {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        #modal-overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">¡Bienvenidos al Salón de Belleza Beauty Salon ! 💇‍♀️💅✨</div>
+    <h2>Las mejores marcas en belleza y cuidado personal</h2>
+    <div class="publicidad">
+        <script>
+            const productos = [
+                { nombre: "Corte de Cabello", descripcion: "Ofrecemos cortes de cabello modernos y personalizados para todas las edades y estilos. Desde cortes clásicos hasta tendencias vanguardistas. Utilizamos tijeras de precisión, navajas y máquinas profesionales. Productos: champú y acondicionador L'Oréal Professionnel. Precio: Q80 - Q150.", marca: "L'Oréal Professionnel" },
+                { nombre: "Peinados y Estilismo", descripcion: "Transformamos tu look con peinados para toda ocasión: bodas, eventos especiales o simplemente para un día increíble. Usamos fijadores de alta duración y herramientas profesionales como rizadores y planchas de cerámica. Precio: Q100 - Q200.", marca: "Wella Professionals" },
+                { nombre: "Coloración del Cabello", descripcion: "Tintes y reflejos con técnicas modernas como balayage, ombré y fantasía. Trabajamos con productos de alta calidad que cuidan la fibra capilar. Incluye hidratación profunda y sellado. Precio: Q250 - Q600.", marca: "Schwarzkopf" },
+                { nombre: "Tratamientos Capilares", descripcion: "Recupera la vitalidad de tu cabello con nuestros tratamientos de keratina, botox capilar y ampollas nutritivas. Reduce el frizz y aporta hidratación profunda. Usamos productos de alta gama para restaurar la salud capilar. Precio: Q200 - Q500.", marca: "Kérastase" },
+                { nombre: "Manicura y Pedicura", descripcion: "Manos y pies cuidados con nuestra gama de servicios: francesa, semipermanente, spa, hidratación profunda y exfoliación. Productos de alta calidad como OPI y Essie. Precio: Q75 - Q150.", marca: "OPI" },
+                { nombre: "Uñas Acrílicas o de Gel", descripcion: "Diseños innovadores y duraderos en acrílico o gel. Esculturales, encapsuladas o baby boomer, con la mejor calidad de productos y un acabado impecable. Precio: Q150 - Q300.", marca: "Gelish" },
+                { nombre: "Maquillaje Profesional", descripcion: "Maquillaje para eventos, bodas y sesiones de fotos. Trabajamos con marcas reconocidas como MAC y Urban Decay. Técnicas especializadas como contouring y aerografía. Precio: Q200 - Q500.", marca: "MAC Cosmetics" },
+                { nombre: "Depilación", descripcion: "Depilación con cera caliente o fría, según la sensibilidad de la piel. También ofrecemos depilación con hilo y láser para una solución duradera. Precio: Q50 - Q300.", marca: "Veet" },
+                { nombre: "Pestañas y Cejas", descripcion: "Extensiones de pestañas, lifting y laminado. Diseño y pigmentación de cejas con henna y microblading para un acabado perfecto. Precio: Q100 - Q350.", marca: "RefectoCil" },
+                { nombre: "Masajes y Spa Facial", descripcion: "Masajes relajantes, descontracturantes y tratamientos faciales para rejuvenecimiento, hidratación y limpieza profunda. Usamos productos como Kiehl's y La Roche-Posay. Precio: Q150 - Q400.", marca: "Kiehl's" }
+            ];
+            
+            
+            productos.forEach(producto => {
+                document.write(`
+                    <div class="anuncio">
+                        <img src="https://via.placeholder.com/300x200" alt="${producto.nombre}">
+                        <h3>${producto.nombre}</h3>
+                        <p>Marca: ${producto.marca}</p>
+                        <button class="boton" onclick="mostrarModal('${producto.nombre}', '${producto.descripcion}')">Ver Producto</button>
+                    </div>
+                `);
+            });
+        </script>
+    </div>
+    <h2>¡Reserva tu cita con nosotros y disfruta de una experiencia única! 🌟</h2>
+    <a href="#" class="boton">Agenda tu Cita</a>
+
+    <div id="modal-overlay" onclick="cerrarModal()"></div>
+    <div id="modal">
+        <h2 id="modal-titulo"></h2>
+        <p id="modal-descripcion"></p>
+        <button class="boton" onclick="cerrarModal()">Cerrar</button>
+    </div>
+
+    <script>
+        function mostrarModal(titulo, descripcion) {
+            document.getElementById("modal-titulo").innerText = titulo;
+            document.getElementById("modal-descripcion").innerText = descripcion;
+            document.getElementById("modal").style.display = "block";
+            document.getElementById("modal-overlay").style.display = "block";
+        }
+
+        function cerrarModal() {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("modal-overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color menta </title>
+    <style>
+        body {
+            background-color: #98FF98; /* menta  */
+        }
+    </style>
+</head>
+<body>
+
+    
+</body>
+</html>

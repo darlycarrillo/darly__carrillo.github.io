@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+
+<body>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos de Belleza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .producto {
+            width: 220px;
+            margin: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: white;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #87CEEB;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #00A2C2;
+        }
+        #carrito {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            background-color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Productos de Belleza</h1>
+    <div class="contenedor" id="productos"></div>
+    <h2>Carrito de Compras</h2>
+    <div id="carrito">
+        <ul id="lista-carrito"></ul>
+        <h3>Total: $<span id="total">0</span></h3>
+    </div>
+    <script>
+        let carrito = [];
+        let total = 0;
+        let productos = [
+            {nombre: "Tijeras de peluquería", precio: 25},
+            {nombre: "Máquina de corte profesional", precio: 80},
+            {nombre: "Cepillo de peluquería", precio: 15},
+            {nombre: "Cera para peinado", precio: 12},
+            {nombre: "Gel fijador", precio: 10},
+            {nombre: "Plancha de cabello", precio: 50},
+            {nombre: "Spray fijador", precio: 18},
+            {nombre: "Tinte rubio", precio: 35},
+            {nombre: "Tinte castaño", precio: 35},
+            {nombre: "Tinte negro", precio: 35},
+            {nombre: "Acondicionador hidratante", precio: 22},
+            {nombre: "Mascarilla capilar", precio: 20},
+            {nombre: "Esmalte rojo", precio: 8},
+            {nombre: "Esmalte nude", precio: 8},
+            {nombre: "Esmalte transparente", precio: 8},
+            {nombre: "Kit uñas acrílicas", precio: 30},
+            {nombre: "Gel UV para uñas", precio: 25},
+            {nombre: "Pegamento de uñas", precio: 10},
+            {nombre: "Delineador de cejas", precio: 12},
+            {nombre: "Sombra de ojos", precio: 18},
+            {nombre: "Base de maquillaje", precio: 35},
+            {nombre: "Corrector de ojeras", precio: 20},
+            {nombre: "Delineador líquido", precio: 15},
+            {nombre: "Rímel voluminizador", precio: 22},
+            {nombre: "Cera depilatoria", precio: 25},
+            {nombre: "Crema post-depilatoria", precio: 18},
+            {nombre: "Pestañas postizas", precio: 20},
+            {nombre: "Pegamento para pestañas", precio: 10},
+            {nombre: "Aceite de masaje", precio: 28},
+            {nombre: "Crema facial hidratante", precio: 25},
+            {nombre: "Serum rejuvenecedor", precio: 35}
+        ];
+        
+        function mostrarProductos() {
+            let contenedor = document.getElementById("productos");
+            productos.forEach(producto => {
+                let div = document.createElement("div");
+                div.classList.add("producto");
+                div.innerHTML = `<h2>${producto.nombre}</h2><p>Precio: $${producto.precio}</p><button onclick="agregarAlCarrito('${producto.nombre}', ${producto.precio})">Agregar</button>`;
+                contenedor.appendChild(div);
+            });
+        }
+        
+        function agregarAlCarrito(producto, precio) {
+            carrito.push({ producto, precio });
+            total += precio;
+            actualizarCarrito();
+        }
+        
+        function actualizarCarrito() {
+            const listaCarrito = document.getElementById("lista-carrito");
+            const totalElement = document.getElementById("total");
+            listaCarrito.innerHTML = "";
+            carrito.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = `${item.producto} - $${item.precio}`;
+                listaCarrito.appendChild(li);
+            });
+            totalElement.textContent = total;
+        }
+        
+        mostrarProductos();
+    </script>
+</body>
+</html>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color menta </title>
+    <style>
+        body {
+            background-color: #98FF98; /* menta  */
+        }
+    </style>
+</head>
+<body>
+
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+
+<body>
+<h1 align="center"><img src="logo1.jpg" alt="Las mejores 200 ideas de Logotipo de salón | logotipo de salón, logos de  peluqueria, logo de salón de belleza" width="149" height="98"/> Beauty Salon<img src="Liceo Valle del Sol.jpg" alt="LICEO VALLE DEL SOL Y GEDUCAR | Geducar" width="117" height="52"/><img src="slogan.jpeg" alt="Plantilla Anuncio de estudio de belleza con arte lineal femenino y eslogan  en línea de Logotipo - VistaCreate" width="91" height="72"/></h1>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Visitas</title>
+    <style>
+        .contador {
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            background-color: #ccffcc; /* Verde clarito */
+            border: 2px solid #66cc66;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="contador">
+        Visitas: <span id="visitas"></span>
+    </div>
+    
+    <script>
+        // Hacer una solicitud al archivo PHP para obtener el número de visitas
+        fetch("contador.php")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("visitas").textContent = data;
+            })
+            .catch(error => console.error("Error al obtener visitas:", error));
+    </script>
+</body>
+</html>
+
+
+</body>
+</html>
